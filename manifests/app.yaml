@@ -71,8 +71,8 @@ spec:
         ports:
         - containerPort: 8080
         env:
-        - name: DATABASE_URL
-          value: "postgres://postgres:mypassword@azure-vote-back"
+        - name: DATABASE_SERVER
+          value: "azure-vote-back"
         - name: DATABASE_PASSWORD
           value: "mypassword"
 ---
