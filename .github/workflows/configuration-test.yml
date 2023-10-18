@@ -67,7 +67,7 @@ jobs:
           loadTestResource: aks-malt
           loadTestRunName: "Automated Test Run ${{ steps.version.outputs.sha_short }}"
           loadTestRunDescription: "frontend (${{ matrix.frontend_replicas }}, ${{ matrix.frontend_cpu_limit }}, ${{ matrix.frontend_mem_limit }})" 
-          resourceGroup: ${{ secrets.AZURE_RESOURCE_GROUP_NAME }}
+          resourceGroup: rg-aks-load
           env: |
             [
               {
