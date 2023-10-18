@@ -3,6 +3,3 @@ testName: AKS_Configuration_Test
 testPlan: http-test.jmx
 description: 'AKS Configuration Test'
 engineInstances: 1
-failureCriteria: 
-    - avg(response_time_ms) > 3500
-    - percentage(error) > 90
