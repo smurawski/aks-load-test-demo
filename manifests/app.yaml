@@ -16,10 +16,10 @@ spec:
         "kubernetes.io/os": linux
       containers:
       - name: azure-vote-back
-        image: mcr.microsoft.com/oss/bitnami/redis:6.2.12
+        image: postgres:15.0-alpine
         env:
-        - name: ALLOW_EMPTY_PASSWORD
-          value: "yes"
+        - name: POSTGRES_PASSWORD
+          value: "mypassword"
         resources:
           requests:
             cpu: 100m
@@ -68,10 +68,10 @@ spec:
             cpu: ${FRONTEND_CPU_LIMIT}
             memory: ${FRONTEND_MEM_LIMIT}
         ports:
-        - containerPort: 80
+        - containerPort: 8080
         env:
-        - name: REDIS
-          value: "azure-vote-back"
+        - name: DATABASE_URL
+          value: "postgres://postgres:mypassword@azure-vote-back"
 ---
 apiVersion: v1
 kind: Service
