@@ -64,7 +64,7 @@ jobs:
         uses: azure/load-testing@v1.1.14
         with:
           loadTestConfigFile: 'loadtests/configuration-test.yaml'
-          loadTestResource: ${{ secrets.AZURE_LOAD_TEST_NAME }}
+          loadTestResource: aks-malt
           loadTestRunName: "Automated Test Run ${{ steps.version.outputs.sha_short }}"
           loadTestRunDescription: "frontend (${{ matrix.frontend_replicas }}, ${{ matrix.frontend_cpu_limit }}, ${{ matrix.frontend_mem_limit }})" 
           resourceGroup: ${{ secrets.AZURE_RESOURCE_GROUP_NAME }}
